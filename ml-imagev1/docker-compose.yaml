@@ -1,0 +1,11 @@
+version: '3'
+services:
+  code-server:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./code:/app/code
+    environment:
+      - PASSWORD=password1
+    command: ["code-server", "--bind-addr", "0.0.0.0:8080", "--auth", "password"]
